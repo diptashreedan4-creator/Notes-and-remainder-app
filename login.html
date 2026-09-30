@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log in | Notes & Reminders</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="auth">
+  <div class="auth-box">
+    <h1>Log in</h1>
+    <p class="sub">Use the account you created on this device.</p>
+    <form onsubmit="loginUser(event)">
+      <label for="username">Username</label>
+      <input type="text" id="username" autocomplete="username" required>
+      <label for="password">Password</label>
+      <input type="password" id="password" autocomplete="current-password" required>
+      <button type="submit" class="btn block">Log in</button>
+    </form>
+    <p id="loginMessage" class="message" role="alert"></p>
+    <p class="alt">No account yet? <a href="register.html">Create one</a></p>
+  </div>
+</main>
+<footer><p>Notes &amp; Reminders <a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms and Conditions</a></p></footer>
+<script src="script.js"></script>
+</body>
+</html>

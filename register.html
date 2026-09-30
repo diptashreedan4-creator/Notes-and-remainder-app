@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create account | Notes & Reminders</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="auth">
+  <div class="auth-box">
+    <h1>Create account</h1>
+    <p class="sub">Your account and notes stay in this browser.</p>
+    <form onsubmit="registerUser(event)">
+      <label for="registerName">Full name</label>
+      <input type="text" id="registerName" autocomplete="name" required>
+      <label for="registerUsername">Username</label>
+      <input type="text" id="registerUsername" autocomplete="username" required>
+      <label for="registerPassword">Password (6 characters or more)</label>
+      <input type="password" id="registerPassword" autocomplete="new-password" required>
+      <label for="confirmPassword">Confirm password</label>
+      <input type="password" id="confirmPassword" autocomplete="new-password" required>
+      <button type="submit" class="btn block">Create account</button>
+    </form>
+    <p id="registerMessage" class="message" role="alert"></p>
+    <p class="alt">Already registered? <a href="login.html">Log in</a></p>
+  </div>
+</main>
+<footer><p>Notes &amp; Reminders <a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms and Conditions</a></p></footer>
+<script src="script.js"></script>
+</body>
+</html>

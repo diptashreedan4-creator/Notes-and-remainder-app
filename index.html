@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notes & Reminders</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-protected="true">
+<header>
+  <span class="brand">Notes &amp; Reminders</span>
+  <div class="user-section">
+    <span id="userGreeting"></span>
+    <button class="btn ghost small" onclick="logoutUser()">Log out</button>
+  </div>
+</header>
+<main class="container">
+  <section class="welcome">
+    <h1>Hello, <span id="dashboardUsername"></span></h1>
+    <p id="currentDate"></p>
+  </section>
+  <section class="stats" aria-label="Summary">
+    <div class="stat"><strong id="totalNotes">0</strong><span>Notes</span></div>
+    <div class="stat"><strong id="totalReminders">0</strong><span>Reminders</span></div>
+    <div class="stat"><strong id="completedReminders">0</strong><span>Completed</span></div>
+  </section>
+  <section class="section">
+    <div class="section-header">
+      <div><h2>Notes</h2><p>Write things down and search them.</p></div>
+      <button class="btn" onclick="openNoteForm()">Add note</button>
+    </div>
+    <label for="searchNotes">Search notes</label>
+    <input type="search" id="searchNotes" oninput="displayNotes()">
+    <div id="notesContainer" class="cards"></div>
+  </section>
+  <section class="section">
+    <div class="section-header">
+      <div><h2>Reminders</h2><p>Tasks with a date and time.</p></div>
+      <button class="btn" onclick="openReminderForm()">Add reminder</button>
+    </div>
+    <div id="remindersContainer" class="cards"></div>
+  </section>
+</main>
+<div id="noteModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="noteFormTitle">
+  <div class="modal-content">
+    <button class="close" onclick="closeNoteForm()" aria-label="Close">&times;</button>
+    <h2 id="noteFormTitle">Add note</h2>
+    <label for="noteTitle">Title</label>
+    <input type="text" id="noteTitle">
+    <label for="noteContent">Note</label>
+    <textarea id="noteContent" rows="6"></textarea>
+    <button class="btn" onclick="saveNote()">Save note</button>
+  </div>
+</div>
+<div id="reminderModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="reminderFormTitle">
+  <div class="modal-content">
+    <button class="close" onclick="closeReminderForm()" aria-label="Close">&times;</button>
+    <h2 id="reminderFormTitle">Add reminder</h2>
+    <label for="reminderTitle">Title</label>
+    <input type="text" id="reminderTitle">
+    <label for="reminderDescription">Description</label>
+    <textarea id="reminderDescription" rows="3"></textarea>
+    <label for="reminderDate">Date</label>
+    <input type="date" id="reminderDate">
+    <label for="reminderTime">Time</label>
+    <input type="time" id="reminderTime">
+    <button class="btn" onclick="saveReminder()">Save reminder</button>
+  </div>
+</div>
+<footer><p>Notes &amp; Reminders <a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms and Conditions</a></p></footer>
+<script src="script.js"></script>
+</body>
+</html>
